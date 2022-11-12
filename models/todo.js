@@ -107,7 +107,9 @@ module.exports = (sequelize, DataTypes) => {
 
 		displayableString() {
 			let checkbox = this.completed ? '[x]' : '[ ]';
-			let output = `${this.id}. ${checkbox} ${this.title} ${this.dueDate}`;
+			let output = `${this.id}. ${checkbox} ${this.title.trim()} ${
+				this.dueDate
+			}`;
 			return output.trim();
 		}
 	}
