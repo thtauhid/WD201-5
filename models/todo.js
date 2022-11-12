@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
 							[Op.lt]: new Date(),
 						},
 					},
-					order: [['id', 'ASC']],
+					// order: [['id', 'ASC']],
 				});
 			} catch (error) {
 				console.error(error);
@@ -66,7 +66,7 @@ module.exports = (sequelize, DataTypes) => {
 							[Op.eq]: new Date(),
 						},
 					},
-					order: [['id', 'ASC']],
+					// order: [['id', 'ASC']],
 				});
 			} catch (error) {
 				console.error(error);
@@ -82,7 +82,7 @@ module.exports = (sequelize, DataTypes) => {
 							[Op.gt]: new Date(),
 						},
 					},
-					order: [['id', 'ASC']],
+					// order: [['id', 'ASC']],
 				});
 			} catch (error) {
 				console.error(error);
@@ -107,7 +107,8 @@ module.exports = (sequelize, DataTypes) => {
 
 		displayableString() {
 			let checkbox = this.completed ? '[x]' : '[ ]';
-			return `${this.id}. ${checkbox} ${this.title} ${this.dueDate}`;
+			let output = `${this.id}. ${checkbox} ${this.title} ${this.dueDate}`;
+			return output.trim();
 		}
 	}
 	Todo.init(
